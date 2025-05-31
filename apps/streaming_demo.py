@@ -3,8 +3,16 @@ import streamlit as st
 from openai.types.responses import ResponseTextDeltaEvent
 import sys
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
+
+api_key = os.environ.get("OPENAI_API_KEY")
+
+if not api_key:
+    raise ValueError("OPENAI_API_KEY is not set in the environment variables")
 # Add the parent directory to the path so we can import the agents module
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from agents import Agent, Runner

@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 from agents import Runner, Agent, WebSearchTool
 load_dotenv()
-
+ 
 api_key = os.environ.get("OPENAI_API_KEY")
 
 if not api_key:
